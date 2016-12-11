@@ -51,3 +51,8 @@ October 9, 2016:
     - Fixed text shadow
     - Added Homepage View
     - Added Logging controller
+
+December 10, 2016:
+    - Added REST Package
+    - Added Receiving Controller to take REST inputs
+    - Added SQL script.
