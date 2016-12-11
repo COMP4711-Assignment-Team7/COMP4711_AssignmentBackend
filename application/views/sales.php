@@ -1,5 +1,5 @@
 <form>
-    <body class="SalesBody">
+    <body class="SalesBody">zzz
         <h1>Item List</h2>
         <p>Input the amount of items</p> 
         {sales}        

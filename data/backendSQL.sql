@@ -8,6 +8,7 @@ SET time_zone = "-08:00";
 --
 -- Database: `proj_back`
 --
+-- Script by: Connor Phalen
 --
 -- Table structure for table `supplies`
 --
@@ -31,7 +32,7 @@ INSERT INTO `supply` (`id`, `name`, `description`, `price`, `quantity`, `src`, `
 (1, 'Fuel', 'Military Grade Fuel for the F22.', 300, 20000, '', 'product/1'),
 (2, 'Oil', 'Oil lubricant to ensure mechanical parts operate smoothly.', 100, 14100, '', 'product/2'),
 (3, 'Missles', 'AIM 120C Missles for Air-to-Air combat.', 400000, 680, 'assets/img/AIM-120_1.jpg', 'product/3'),
-(4, 'Ammo', '20mm PGU-28A/B SAPHEI rounds for the F-22\'s M61A2 Cannon.', 250, 53070, 'assets/img/PGU-28A_1.jpg', 'product/4'),
+(4, 'Ammo', '20mm PGU-28A/B SAPHEI rounds for the F-22s M61A2 Cannon.', 250, 53070, 'assets/img/PGU-28A_1.jpg', 'product/4'),
 (5, 'Rivets', 'Rivets for the inner frame of the F-22.', 350, 542, '', 'product/5'),
 (6, 'JDAM', 'A cheap smart bomb for use in use in ground attacks.', 25000, 756, '', 'product/6'),
 (7, 'Wheel', 'Wheels for the landing gear. Essential for landing.', 2400, 230, '', 'product/7'),
