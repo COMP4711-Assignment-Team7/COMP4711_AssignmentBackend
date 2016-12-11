@@ -16,7 +16,7 @@ class Receiving extends Rest_Controller
     function __construct()
     {
             parent::__construct();
-            $this->load->model('supplies');
+            $this->load->model('supply');
     }
     
     public function index_get()
@@ -24,10 +24,10 @@ class Receiving extends Rest_Controller
         $key = $this->get('id');
         if (!$key)
         {
-            $this->response($this->supplies->all(), 200);
+            $this->response($this->supply->all(), 200);
         } else
         {
-            $result = $this->supplies->get($key);
+            $result = $this->supply->get($key);
             if ($result != null)
                 $this->response($result, 200);
             else
@@ -41,10 +41,10 @@ class Receiving extends Rest_Controller
         $key = $this->get('id');
         if (!$key)
         {
-            $this->response($this->supplies->all(), 200);
+            $this->response($this->supply->all(), 200);
         } else
         {
-            $result = $this->supplies->get($key);
+            $result = $this->supply->get($key);
             if ($result != null)
                 $this->response($result, 200);
             else
@@ -57,7 +57,7 @@ class Receiving extends Rest_Controller
     {
         $key = $this->get('id');
         $record = array_merge(array('id' => $key), $this->_put_args);
-        $this->supplies->update($record);
+        $this->supply->update($record);
         $this->response(array('ok'), 200);
     }
 
@@ -66,7 +66,7 @@ class Receiving extends Rest_Controller
     {
         $key = $this->get('id');
         $record = array_merge(array('id' => $key), $_POST);
-        $this->supplies->add($record);
+        $this->supply->add($record);
         $this->response(array('ok'), 200);
     }
 
@@ -74,50 +74,8 @@ class Receiving extends Rest_Controller
     function item_delete()
     {
         $key = $this->get('id');
-        $this->supplies->delete($key);
+        $this->supply->delete($key);
         $this->response(array('ok'), 200);
     }
-    
-    /*
-	public function index()
-	{
-		$this->data['pagebody'] = 'receiving';
-        //
-		$services = $this->services->get_all();
-        $supplies = $this->supplies->get_all();
-
-        //go through supplies
-		foreach ($supplies as $supply)
-		{
-			//add supply info
-			$standalone[] = array('supply' => $supply['name']);
-		}
-
-		//go through services
-		foreach ($services as $service)
-		{
-			//add service info
-			$bundle[] = array('service' => $service['name']);
-		}
-		//add both supplies and services
-		$this->data['receiving'] = array(array('supplies' => $standalone, 'services' => $bundle));
-		$this->render();
-	}
-
-	//receive service
-	public function receive()
-	{
-		//results returned from POST
-		$results = $this->input->post();
-
-		//go through results and add the quanity specified to the stocks
-		foreach ($results as $service)
-		{
-			$this->stocks->set_quantity($service['name'], "add", $service['quantity']);
-		}
-
-		//return message upon successful stocking
-	}
-     * 
-     */
+   
 }

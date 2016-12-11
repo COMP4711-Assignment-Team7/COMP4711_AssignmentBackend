@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-class Supplies extends CI_Model {
+class Supply extends MY_Model {
 
     // Default Constructor
     public function __construct()
