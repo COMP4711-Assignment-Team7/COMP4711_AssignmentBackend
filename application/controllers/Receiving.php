@@ -57,13 +57,20 @@ class Receiving extends Rest_Controller
     {
         $key = $this->get('id');
         $record = array_merge(array('id' => $key), $this->_put_args);
+        
+        $dbRecord = $this->supply->get($key);
+        
+        $dbArray = json_decode(json_encode($dbRecord), True);
+        
+        $record['quantity'] += $dbArray['quantity'];
+        
         $this->supply->update($record);
         $this->response(array('ok'), 200);
     }
 
     // Handle an incoming POST - add a new menu item
     function item_post()
-    {
+    {      
         $key = $this->get('id');
         $record = array_merge(array('id' => $key), $_POST);
         $this->supply->add($record);
